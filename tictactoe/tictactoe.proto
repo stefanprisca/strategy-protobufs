@@ -32,9 +32,18 @@ message InitTrxArgs {
     Mark player2_mark = 2;
 }
 
-message MoveTrxArgs{
+enum TrxType{
+    MOVE = 0;
+}
+
+message TrxArgs{
+    TrxType type = 1;
+    MoveTrxPayload movePayload = 2;
+    
+    google.protobuf.Timestamp last_updated = 9;
+}
+
+message MoveTrxPayload {
     int32 position = 1;
     Mark mark = 2;
-
-    google.protobuf.Timestamp last_updated = 9;
 }
