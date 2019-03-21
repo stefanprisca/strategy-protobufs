@@ -1,0 +1,85 @@
+// Copyright 2019 Stefan Prisca
+
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+
+// 	http://www.apache.org/licenses/LICENSE-2.0
+
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax="proto3";
+package catan;
+
+enum Settlement { 
+        NOSETTLE = 0;
+        REDSETTLE = 1;
+        GREENSETTLE = 2;
+        BLUESETTLE = 3;
+    }
+
+message IntersectionAttributes {
+    Settlement settlement = 1;
+}
+
+message Intersection {
+    int32 id = 1;
+    int32 incidentEdge = 2;
+    IntersectionAttributes attributes = 3;
+
+    string coordinates = 5;
+     
+}
+
+enum Resource {
+    HILL = 0;
+    FOREST = 1;
+    MOUNTAIN = 2;
+    FIELD = 3;
+    PASTURE = 4;
+    CAMP = 5;
+}
+
+message TileAttributes {
+    Resource resource = 1;
+    int32 rollNumber = 2;
+}
+
+message Tile {
+    int32 id = 1;
+    int32 outerComponent = 2;
+
+    TileAttributes attributes = 3;
+}
+
+enum Road { 
+        NOROAD = 0;
+        REDROAD = 1;
+        GREENROAD = 2;
+        BLUEROAD = 3;
+    }
+
+message EdgeAttributes {
+    Road road = 1;
+}
+
+message Edge {
+    int32 id = 1;
+    int32 origin = 2;
+    int32 twin = 3;
+    int32 incidentTile = 4;
+    int32 next = 5;
+    int32 prev = 6;
+
+    EdgeAttributes attributes = 7;
+}
+
+message GameBoard {
+    map<int32, Intersection> intersections = 1;
+    map<int32, Tile> tiles = 2;
+    map<int32, Edge> edges = 3;
+}

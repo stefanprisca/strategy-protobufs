@@ -9,6 +9,13 @@
             "command": "protoc -I=./tictactoe --go_out=./tictactoe ./tictactoe/tictactoe.proto",
             "group": "build",
             "problemMatcher": []
+        },
+        {
+            "label": "protoc-tfc",
+            "type": "shell",
+            "command": "protoc -I=./catan --go_out=./catan ./catan/catan.proto",
+            "group": "build",
+            "problemMatcher": []
         }
     ]
 }

@@ -42,7 +42,7 @@ func (x Mark) String() string {
 	return proto.EnumName(Mark_name, int32(x))
 }
 func (Mark) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_tictactoe_984f32c8a064e548, []int{0}
+	return fileDescriptor_tictactoe_59b410e1e651d69f, []int{0}
 }
 
 type TrxType int32
@@ -62,7 +62,7 @@ func (x TrxType) String() string {
 	return proto.EnumName(TrxType_name, int32(x))
 }
 func (TrxType) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_tictactoe_984f32c8a064e548, []int{1}
+	return fileDescriptor_tictactoe_59b410e1e651d69f, []int{1}
 }
 
 type TttContract_State int32
@@ -94,7 +94,7 @@ func (x TttContract_State) String() string {
 	return proto.EnumName(TttContract_State_name, int32(x))
 }
 func (TttContract_State) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_tictactoe_984f32c8a064e548, []int{0, 0}
+	return fileDescriptor_tictactoe_59b410e1e651d69f, []int{0, 0}
 }
 
 type TttContract struct {
@@ -112,7 +112,7 @@ func (m *TttContract) Reset()         { *m = TttContract{} }
 func (m *TttContract) String() string { return proto.CompactTextString(m) }
 func (*TttContract) ProtoMessage()    {}
 func (*TttContract) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tictactoe_984f32c8a064e548, []int{0}
+	return fileDescriptor_tictactoe_59b410e1e651d69f, []int{0}
 }
 func (m *TttContract) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TttContract.Unmarshal(m, b)
@@ -179,7 +179,7 @@ func (m *InitTrxArgs) Reset()         { *m = InitTrxArgs{} }
 func (m *InitTrxArgs) String() string { return proto.CompactTextString(m) }
 func (*InitTrxArgs) ProtoMessage()    {}
 func (*InitTrxArgs) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tictactoe_984f32c8a064e548, []int{1}
+	return fileDescriptor_tictactoe_59b410e1e651d69f, []int{1}
 }
 func (m *InitTrxArgs) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_InitTrxArgs.Unmarshal(m, b)
@@ -226,7 +226,7 @@ func (m *TrxArgs) Reset()         { *m = TrxArgs{} }
 func (m *TrxArgs) String() string { return proto.CompactTextString(m) }
 func (*TrxArgs) ProtoMessage()    {}
 func (*TrxArgs) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tictactoe_984f32c8a064e548, []int{2}
+	return fileDescriptor_tictactoe_59b410e1e651d69f, []int{2}
 }
 func (m *TrxArgs) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TrxArgs.Unmarshal(m, b)
@@ -279,7 +279,7 @@ func (m *MoveTrxPayload) Reset()         { *m = MoveTrxPayload{} }
 func (m *MoveTrxPayload) String() string { return proto.CompactTextString(m) }
 func (*MoveTrxPayload) ProtoMessage()    {}
 func (*MoveTrxPayload) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tictactoe_984f32c8a064e548, []int{3}
+	return fileDescriptor_tictactoe_59b410e1e651d69f, []int{3}
 }
 func (m *MoveTrxPayload) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MoveTrxPayload.Unmarshal(m, b)
@@ -323,9 +323,9 @@ func init() {
 	proto.RegisterEnum("tictactoe.TttContract_State", TttContract_State_name, TttContract_State_value)
 }
 
-func init() { proto.RegisterFile("tictactoe.proto", fileDescriptor_tictactoe_984f32c8a064e548) }
+func init() { proto.RegisterFile("tictactoe.proto", fileDescriptor_tictactoe_59b410e1e651d69f) }
 
-var fileDescriptor_tictactoe_984f32c8a064e548 = []byte{
+var fileDescriptor_tictactoe_59b410e1e651d69f = []byte{
 	// 420 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xa4, 0x52, 0x4d, 0xaf, 0x9a, 0x40,
 	0x14, 0x95, 0xaf, 0x2a, 0x17, 0xa3, 0x64, 0xba, 0x41, 0xdb, 0xa4, 0x86, 0x26, 0x4d, 0x63, 0x52,
