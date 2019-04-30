@@ -13,7 +13,7 @@
 // limitations under the License.
 
 syntax="proto3";
-package catan;
+package tfc;
 
 enum Settlement { 
         NOSETTLE = 0;
@@ -35,13 +35,16 @@ message Intersection {
      
 }
 
-enum Resource {
-    HILL = 0;
-    FOREST = 1;
-    MOUNTAIN = 2;
-    FIELD = 3;
-    PASTURE = 4;
-    CAMP = 5;
+message Resource {
+    enum ResourceType {
+        HILL = 0;
+        FOREST = 1;
+        MOUNTAIN = 2;
+        FIELD = 3;
+        PASTURE = 4;
+        CAMP = 5;
+    }
+    ResourceType type = 1;
 }
 
 message TileAttributes {
@@ -82,4 +85,42 @@ message GameBoard {
     map<int32, Intersection> intersections = 1;
     map<int32, Tile> tiles = 2;
     map<int32, Edge> edges = 3;
+}
+
+enum Player {
+    RED = 0;
+    GREEN = 1;
+    BLUE = 2;
+}
+
+message PlayerProfile {
+    map<int32, int32> resources = 1;
+    int32 winningPoints = 2;
+    int32 settlements = 3;
+    int32 roads = 4;
+}
+
+enum GameState {
+    JOINING = 0;
+    RROLL = 1;
+    RTRADE = 2;
+    RDEV = 3;
+    BROLL = 4;
+    BTRADE = 5;
+    BDEV = 6;
+    GROLL = 7;
+    GTRADE = 8;
+    GDEV = 9;
+
+    RWON = 10;
+    BWON = 11;
+    GWON = 12;
+}
+
+message GameData{
+    GameBoard board = 1;
+    map<int32, PlayerProfile> profiles = 2;
+    GameState state = 3;
+
+    map<int32, bytes> identityMap = 4;
 }

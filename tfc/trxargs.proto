@@ -1,0 +1,63 @@
+syntax="proto3";
+package tfc;
+
+import "gamedata.proto";
+
+message JoinTrxPayload {
+    Player player = 1;
+}
+
+message TradeTrxPayload {
+    Player source = 1;
+    Player dest = 2;
+    Resource resource = 3;
+    int32 amount = 4;
+}
+
+enum BuildType {
+    ROAD = 0;
+    SETTLE = 1;
+}
+
+message BuildRoadPayload {
+    int32 edgeID = 1;
+    Player player = 2;
+}
+
+message BuildSettlePayload {
+    int32 settleID = 1;
+    Player player = 2;
+}
+
+message BuildTrxPayload {
+    BuildType type = 1;
+    BuildRoadPayload buildRoadPayload = 2;
+    BuildSettlePayload buildSettlePayload = 3;
+}
+
+enum BattleAction {
+    ATTACK = 0;
+    DEFFEND = 1;
+}
+
+message BattleTrxPayload {
+    BattleAction action = 1;
+    int32 nOfUnits = 2;
+}
+
+enum GameTrxType {
+    JOIN = 0;
+    NEXT = 1;
+    ROLL = 2;
+    TRADE = 3;
+    DEV = 4;
+    BATTLE = 5;
+    REGISTERL = 6;
+}
+
+message TrxArgs {
+    GameTrxType type = 1;
+    TradeTrxPayload tradeTrxPayload = 2;
+    BuildTrxPayload buildTrxPayload = 3;
+    BattleTrxPayload battleTrxPayload = 4;
+}
