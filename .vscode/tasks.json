@@ -13,7 +13,7 @@
         {
             "label": "protoc-tfc",
             "type": "shell",
-            "command": "protoc -I=./catan --go_out=./catan ./catan/catan.proto",
+            "command": "protoc -I=./tfc --go_out=./tfc ./tfc/gamedata.proto ./tfc/battlecontract.proto ./tfc/gamecontract.proto",
             "group": "build",
             "problemMatcher": []
         }

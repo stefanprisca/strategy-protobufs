@@ -15,6 +15,8 @@
 syntax="proto3";
 package tfc;
 
+import "google/protobuf/timestamp.proto";
+
 enum Settlement { 
         NOSETTLE = 0;
         REDSETTLE = 1;
@@ -32,24 +34,24 @@ message Intersection {
     IntersectionAttributes attributes = 3;
 
     string coordinates = 5;
-     
+
+    google.protobuf.Timestamp last_updated = 9;     
 }
 
-message Resource {
-    enum ResourceType {
-        HILL = 0;
-        FOREST = 1;
-        MOUNTAIN = 2;
-        FIELD = 3;
-        PASTURE = 4;
-        CAMP = 5;
-    }
-    ResourceType type = 1;
+enum Resource {
+    HILL = 0;
+    FOREST = 1;
+    MOUNTAIN = 2;
+    FIELD = 3;
+    PASTURE = 4;
+    CAMP = 5;
 }
 
 message TileAttributes {
     Resource resource = 1;
     int32 rollNumber = 2;
+
+    google.protobuf.Timestamp last_updated = 9;
 }
 
 message Tile {
@@ -57,6 +59,8 @@ message Tile {
     int32 outerComponent = 2;
 
     TileAttributes attributes = 3;
+
+    google.protobuf.Timestamp last_updated = 9;
 }
 
 enum Road { 
@@ -79,6 +83,8 @@ message Edge {
     int32 prev = 6;
 
     EdgeAttributes attributes = 7;
+
+    google.protobuf.Timestamp last_updated = 9;
 }
 
 message GameBoard {
@@ -98,6 +104,8 @@ message PlayerProfile {
     int32 winningPoints = 2;
     int32 settlements = 3;
     int32 roads = 4;
+
+    google.protobuf.Timestamp last_updated = 9;
 }
 
 enum GameState {
@@ -123,4 +131,6 @@ message GameData{
     GameState state = 3;
 
     map<int32, bytes> identityMap = 4;
+
+    google.protobuf.Timestamp last_updated = 9;
 }
