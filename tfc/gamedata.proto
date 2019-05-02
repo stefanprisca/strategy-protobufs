@@ -28,12 +28,19 @@ message IntersectionAttributes {
     Settlement settlement = 1;
 }
 
+message Coord {
+	int32 X = 1;
+	int32 Y = 2;
+	int32 Z = 3;
+}
+
+
 message Intersection {
-    int32 id = 1;
+    uint32 id = 1;
     int32 incidentEdge = 2;
     IntersectionAttributes attributes = 3;
 
-    string coordinates = 5;
+    Coord coordinates = 5;
 
     google.protobuf.Timestamp last_updated = 9;     
 }
@@ -55,7 +62,7 @@ message TileAttributes {
 }
 
 message Tile {
-    int32 id = 1;
+    uint32 id = 1;
     int32 outerComponent = 2;
 
     TileAttributes attributes = 3;
@@ -75,7 +82,7 @@ message EdgeAttributes {
 }
 
 message Edge {
-    int32 id = 1;
+    uint32 id = 1;
     int32 origin = 2;
     int32 twin = 3;
     int32 incidentTile = 4;
@@ -88,9 +95,9 @@ message Edge {
 }
 
 message GameBoard {
-    map<int32, Intersection> intersections = 1;
-    map<int32, Tile> tiles = 2;
-    map<int32, Edge> edges = 3;
+    map<uint32, Intersection> intersections = 1;
+    map<uint32, Tile> tiles = 2;
+    map<uint32, Edge> edges = 3;
 }
 
 enum Player {
