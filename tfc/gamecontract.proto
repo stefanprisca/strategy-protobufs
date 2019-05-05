@@ -60,6 +60,7 @@ message GameContractTrxArgs {
     TradeTrxPayload tradeTrxPayload = 2;
     BuildTrxPayload buildTrxPayload = 3;
     BattleTrxPayload battleTrxPayload = 4;
+    JoinTrxPayload joinTrxPayload = 5;
 
     google.protobuf.Timestamp last_updated = 9;
 }
