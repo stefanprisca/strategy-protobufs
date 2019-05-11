@@ -6,14 +6,14 @@
         {
             "label": "protoc-ttt",
             "type": "shell",
-            "command": "protoc -I=./tictactoe --go_out=./tictactoe ./tictactoe/tictactoe.proto",
+            "command": "protoc -I=./tictactoe --go_out=./tictactoe ./tictactoe/tictactoe.proto; protoc --proto_path=./tictactoe --js_out=import_style=commonjs,binary:./tictactoe ./tictactoe/tictactoe.proto",
             "group": "build",
             "problemMatcher": []
         },
         {
             "label": "protoc-tfc",
             "type": "shell",
-            "command": "protoc -I=./tfc --go_out=./tfc ./tfc/gamedata.proto ./tfc/battlecontract.proto ./tfc/gamecontract.proto",
+            "command": "protoc -I=./tfc --go_out=./tfc ./tfc/gamedata.proto ./tfc/battlecontract.proto ./tfc/gamecontract.proto; protoc --proto_path=./tfc --js_out=import_style=commonjs,binary:./tfc ./tfc/gamedata.proto ./tfc/battlecontract.proto ./tfc/gamecontract.proto",
             "group": "build",
             "problemMatcher": []
         }
