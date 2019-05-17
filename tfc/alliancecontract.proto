@@ -1,0 +1,22 @@
+syntax="proto3";
+package tfc;
+
+import "google/protobuf/timestamp.proto";
+import "gamedata.proto";
+import "gamecontract.proto";
+
+enum AllianceState {
+    ACTIVE = 0;
+    COMPLETED = 1;
+    FAILED = 2;
+}
+
+message AllianceData {
+    repeated GameContractTrxArgs terms = 1;
+    int32 lifespan = 2;
+    GameState startGameState = 3;
+
+    AllianceState state = 4;
+
+    google.protobuf.Timestamp last_updated = 9;
+}

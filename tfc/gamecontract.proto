@@ -24,14 +24,14 @@ enum BuildType {
 }
 
 message BuildRoadPayload {
-    int32 edgeID = 1;
+    uint32 edgeID = 1;
     Player player = 2;
 
     google.protobuf.Timestamp last_updated = 9;
 }
 
 message BuildSettlePayload {
-    int32 settleID = 1;
+    uint32 settleID = 1;
     Player player = 2;
 
     google.protobuf.Timestamp last_updated = 9;

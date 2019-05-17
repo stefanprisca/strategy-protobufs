@@ -13,7 +13,7 @@
         {
             "label": "protoc-tfc",
             "type": "shell",
-            "command": "protoc -I=./tfc --go_out=./tfc ./tfc/gamedata.proto ./tfc/battlecontract.proto ./tfc/gamecontract.proto; protoc --proto_path=./tfc --js_out=import_style=commonjs,binary:./tfc ./tfc/gamedata.proto ./tfc/battlecontract.proto ./tfc/gamecontract.proto",
+            "command": "protoc -I=./tfc --go_out=./tfc ./tfc/gamedata.proto ./tfc/alliancecontract.proto ./tfc/battlecontract.proto ./tfc/gamecontract.proto; protoc --proto_path=./tfc --js_out=import_style=commonjs,binary:./tfc ./tfc/gamedata.proto ./tfc/battlecontract.proto ./tfc/gamecontract.proto",
             "group": "build",
             "problemMatcher": []
         }
