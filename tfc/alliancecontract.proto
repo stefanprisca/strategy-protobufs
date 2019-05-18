@@ -19,4 +19,5 @@ message AllianceData {
     AllianceState state = 4;
 
     google.protobuf.Timestamp last_updated = 9;
+    uint32 contractID = 10;
 }
