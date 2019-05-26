@@ -17,7 +17,18 @@ message AllianceData {
     GameState startGameState = 3;
 
     AllianceState state = 4;
+    repeated Player allies = 5;
 
     google.protobuf.Timestamp last_updated = 9;
     uint32 contractID = 10;
+}
+
+enum AllianceTrxType {
+    INIT = 0;
+    INVOKE = 1;
+}
+
+message AllianceTrxArgs {
+    AllianceTrxType type = 1;
+    AllianceData data = 2;
 }
