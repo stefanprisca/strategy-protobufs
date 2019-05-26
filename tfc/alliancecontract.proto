@@ -4,6 +4,7 @@ package tfc;
 import "google/protobuf/timestamp.proto";
 import "gamedata.proto";
 import "gamecontract.proto";
+import "observer.proto";
 
 enum AllianceState {
     ACTIVE = 0;
@@ -30,5 +31,8 @@ enum AllianceTrxType {
 
 message AllianceTrxArgs {
     AllianceTrxType type = 1;
-    AllianceData data = 2;
+    AllianceData initPayload = 2;
+    TrxCompletedArgs invokePayload = 3;
+
+    google.protobuf.Timestamp last_updated = 9;
 }
